@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const initialText = `# Welcome to my React Markdown Previewer!
 
@@ -46,7 +46,18 @@ And here. | Okay. | I think we get it.
 `;
 
 const App = () => {
-  return <>Hello, World!</>;
+  const [value, setValue] = useState(initialText);
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => setValue(e.target.value);
+
+  return (<div>
+    <div id="preview">
+      {value}
+    </div>
+    <div>
+      <textarea id="editor" onChange={handleChange}>{value}</textarea>
+    </div>
+  </div>);
 }
 
 export default App;
