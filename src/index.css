@@ -1,0 +1,16 @@
+#mainContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content {
+  max-height: 50%;
+  flex-grow: 1;
+  width: 50rem;
+  padding: 0.5rem 2rem;
+  margin: auto;
+}
