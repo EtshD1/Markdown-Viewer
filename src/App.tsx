@@ -61,7 +61,7 @@ const App = () => {
     <div className="content">
       <h1>Editor</h1>
       <div id="textEditor">
-        <textarea id="editor" onChange={handleChange}>{value}</textarea>
+        <textarea id="editor" onChange={handleChange} value={value}></textarea>
       </div>
     </div>
   </div>);

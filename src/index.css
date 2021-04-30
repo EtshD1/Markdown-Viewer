@@ -5,12 +5,14 @@
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  background-color: #0d1b2a;
+  color: #f0f8ff;
 }
 
 .content {
-  max-height: 50%;
+  width: 100%;
   flex-grow: 1;
-  width: 50rem;
   padding: 0.5rem 2rem;
   margin: auto;
+  max-height: 50%;
 }
