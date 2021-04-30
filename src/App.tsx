@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import marked from 'marked';
+
+marked.setOptions({ breaks: true });
 
 const initialText = `# Welcome to my React Markdown Previewer!
 
@@ -51,9 +54,7 @@ const App = () => {
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => setValue(e.target.value);
 
   return (<div>
-    <div id="preview">
-      {value}
-    </div>
+    <div id="preview" dangerouslySetInnerHTML={{ __html: marked(value) }} />
     <div>
       <textarea id="editor" onChange={handleChange}>{value}</textarea>
     </div>
