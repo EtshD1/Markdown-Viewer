@@ -53,10 +53,16 @@ const App = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => setValue(e.target.value);
 
-  return (<div>
-    <div id="preview" dangerouslySetInnerHTML={{ __html: marked(value) }} />
-    <div>
-      <textarea id="editor" onChange={handleChange}>{value}</textarea>
+  return (<div id='mainContainer'>
+    <div className="content">
+      <h1>Preview</h1>
+      <div id="preview" dangerouslySetInnerHTML={{ __html: marked(value) }} />
+    </div>
+    <div className="content">
+      <h1>Editor</h1>
+      <div id="textEditor">
+        <textarea id="editor" onChange={handleChange} value={value}></textarea>
+      </div>
     </div>
   </div>);
 }
