@@ -1,13 +1,187 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#mainContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #0d1b2a;
+  color: #f0f8ff;
+  font-family: Montserrat;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
+  padding: 0 2rem;
+  margin: auto;
+  max-height: 50%;
+  overflow: hidden;
+}
+
+.content > h1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  color: #faf3dd;
+}
+
+.content > * {
+  border: 1px solid #37434f;
+}
+
+#textEditor {
+  height: 100%;
+  padding-left: 0.75rem;
+}
+
+#preview {
+  padding: 0.75rem;
+  overflow-y: scroll;
+}
+
+#editor {
+  resize: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  color: #f0f8ff;
+  background-color: #00000000;
+  border: none;
+}
+
+#editor:focus {
+  outline: none;
+}
+
+#preview h1,
+#preview h2,
+#preview h3,
+#preview h4,
+#preview h5,
+#preview h6,
+#preview > p,
+#preview ul {
+  padding: 0.5rem;
+}
+
+#preview ul ul {
+  padding: 0 0 0 0.5rem;
+  flex: 1 0 100%;
+}
+
+#preview ul li {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#preview li > ul li ul li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #f0f8ff;
+  margin-right: 0.5rem;
+  border-radius: 0;
+}
+
+#preview li > ul > li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  border: 1px solid #f0f8ff;
+  background: none;
+  margin-right: 0.5rem;
+}
+
+#preview ul > li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: #f0f8ff;
+  margin-right: 0.5rem;
+}
+
+#preview h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+#preview h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#preview h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#preview h4 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#preview h5 {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+#preview h6 {
+  font-size: 0.5rem;
+  font-weight: 700;
+}
+
+#preview strong {
+  font-weight: 700;
+}
+
+#preview em {
+  font-style: italic;
+}
+
+#preview code,
+#preview pre {
+  background-color: #37434f;
+}
+
+#preview a {
+  color: #76e5fc;
+}
+
+#preview a:visited {
+  color: #9dacff;
+}
+
+#preview blockquote {
+  padding: 1rem;
+}
+
+#preview blockquote p {
+  padding-left: 0.5rem;
+  border-left: #23967f 2px solid;
+  color: #23967f;
+}
+
+#preview table th,
+#preview table td {
+  padding: 0.2rem 0.3rem;
+  border: 1px solid #7a93ac;
+}
+
+#preview ul,
+#preview ol {
+  padding-left: 1rem;
+}
+
+#preview ol li {
+  list-style: decimal;
 }
