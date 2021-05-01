@@ -2,6 +2,10 @@
 
 A TypeScript/React App that edits and shows how a MD file would look like in an HTML page. 
 
+## Live Version
+
+Follow this [link](https://etshd1.github.io/Markdown-Viewer/) to see a running version on GitHub pages
+
 ## Available Scripts
 
 In the project directory, you can run:
