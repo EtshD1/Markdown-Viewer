@@ -48,22 +48,27 @@ And here. | Okay. | I think we get it.
 ![React Logo w/ Text](https://goo.gl/Umyytc)
 `;
 
+const Content = ({ name, children }: { name: string, children: JSX.Element }) => {
+  return (<div className="content">
+    <h1>{name}</h1>
+    {children}
+  </div>);
+}
+
 const App = () => {
   const [value, setValue] = useState(initialText);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => setValue(e.target.value);
 
   return (<div id='mainContainer'>
-    <div className="content">
-      <h1>Preview</h1>
+    <Content name="Preview">
       <div id="preview" dangerouslySetInnerHTML={{ __html: marked(value) }} />
-    </div>
-    <div className="content">
-      <h1>Editor</h1>
+    </Content>
+    <Content name="Editor">
       <div id="textEditor">
         <textarea id="editor" onChange={handleChange} value={value}></textarea>
       </div>
-    </div>
+    </Content>
   </div>);
 }
 
